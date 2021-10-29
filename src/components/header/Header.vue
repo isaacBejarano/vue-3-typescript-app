@@ -1,12 +1,11 @@
 <template>
 	<header class="header">
-		<!-- <span class="d-block h1">
+		<span class="d-block h1">
 			{{ title }}
 		</span>
 		<span class="d-block h2">
 			{{ subtitle }}
-		</span> -->
-		HEADER
+		</span>
 	</header>
 </template>
 
