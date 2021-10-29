@@ -31,7 +31,7 @@ export default defineComponent({
 			emit("of-modal", false);
 
 			// redirect to trigger guard
-			setTimeout(() => router.push(access ? e_NavLinks.pegi : "/"), 500);
+			setTimeout(() => router.push(access ? e_NavLinks.guard : e_NavLinks.home), 500);
 		}
 
 		return { props, assets, bypassGuard };

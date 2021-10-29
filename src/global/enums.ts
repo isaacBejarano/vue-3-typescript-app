@@ -7,10 +7,10 @@ enum e_Storage {
 enum e_NavLinks {
 	home = "/",
 	form = "/form",
-	pegi = "/pegi",
-	tdd = "/tdd",
+	guard = "/guard",
 	lifecycle = "/lifecycle-hooks",
 	vuex = "/vuex",
+	tdd = "/tdd",
 }
 
 export { e_Storage, e_NavLinks };

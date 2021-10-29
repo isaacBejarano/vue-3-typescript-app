@@ -19,25 +19,25 @@ const routes: Array<RouteRecordRaw> = [
 		component: () => import(/* webpackChunkName: "Form" */ "@/views/form/Form.vue"),
 	},
 	{
-		path: e_NavLinks.pegi,
+		path: e_NavLinks.guard,
 		name: "Pegi",
 		component: () => import(/* webpackChunkName: "Pegi" */ "@/views/pegi/Pegi.vue"),
-	},
-	{
-		path: e_NavLinks.tdd,
-		name: "TDD",
-		component: () => import(/* webpackChunkName: "TDD" */ "@/views/tdd/TDD.vue"),
 	},
 	{
 		path: e_NavLinks.lifecycle,
 		name: "Lifecycle",
 		component: () => import(/* webpackChunkName: "Lifecycle" */ "@/views/lifecycle/Lifecycle.vue"),
 	},
-	{
-		path: e_NavLinks.vuex,
-		name: "VueX",
-		component: () => import(/* webpackChunkName: "VueX" */ "@/views/vuex/VueX.vue"),
-	},
+	// {
+	// 	path: e_NavLinks.vuex,
+	// 	name: "VueX",
+	// 	component: () => import(/* webpackChunkName: "VueX" */ "@/views/vuex/VueX.vue"),
+	// },
+	// {
+	// 	path: e_NavLinks.tdd,
+	// 	name: "TDD",
+	// 	component: () => import(/* webpackChunkName: "TDD" */ "@/views/tdd/TDD.vue"),
+	// },
 
 	// redirects
 	{
