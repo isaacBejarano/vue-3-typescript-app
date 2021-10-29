@@ -1,15 +1,8 @@
 <template>
-	<!-- header -->
-	<!-- <Header /> -->
-
-	<!-- navbar -->
+	<Header />
 	<Navbar />
-
-	<!-- router -->
 	<router-view />
-
-	<!-- footer -->
-	<!-- <Footer /> -->
+	<Footer />
 </template>
 
 <script lang="ts" src="./app"></script>

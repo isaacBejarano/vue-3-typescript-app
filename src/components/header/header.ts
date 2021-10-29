@@ -1,17 +1,12 @@
-// import { Options, Vue } from "vue-class-component";
-
-import { defineComponent } from "vue";
-
-// @Options({
-// 	data() {
-// 		return {
-// 			title: "Vue 3.0",
-// 			subtitle: "sample features",
-// 		};
-// 	},
-// })
-// export default class Header extends Vue {}
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-	name:'Header'
-})
+	name: "Header",
+
+	setup() {
+		const title = ref("Vue 3.0");
+		const subtitle = ref("sample features");
+
+		return { title, subtitle };
+	},
+});
