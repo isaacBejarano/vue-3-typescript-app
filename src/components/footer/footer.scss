@@ -1,0 +1,11 @@
+.footer {
+	background: linear-gradient(to left, palegreen, palegoldenrod);
+	padding: 1rem;
+
+	span:nth-of-type(1) {
+		font-size: 0.9rem;
+	}
+	span:nth-of-type(n + 2) {
+		font-size: 0.8rem;
+	}
+}

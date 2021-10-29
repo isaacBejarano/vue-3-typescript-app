@@ -1,0 +1,16 @@
+// buttons
+.btn-group {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	& > button {
+		margin: 0.5rem;
+	}
+}
+
+button[type="submit"],
+button[type="button"] {
+	cursor: pointer;
+	border-color: cadetblue;
+	background: linear-gradient(to left, palegreen, palegoldenrod);
+}

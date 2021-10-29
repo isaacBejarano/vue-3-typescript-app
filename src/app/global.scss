@@ -1,0 +1,24 @@
+@import "@/sass/global/framework";
+
+// GLOBAL STYLES - not scoped
+#app {
+	box-sizing: border-box;
+	overflow: visible;
+	overflow-wrap: break-word;
+	// text
+	font-family: Avenir, Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-align: center;
+	user-select: none;
+	color: $primary;
+
+	nav {
+		position: relative;
+		z-index: 1500;
+	}
+
+	main {
+		min-height: 100vh;
+	}
+}

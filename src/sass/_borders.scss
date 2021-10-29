@@ -1,0 +1,29 @@
+@import "./variables";
+
+// border / outline
+.border {
+	border: 1px solid gray;
+	&-color {
+		&-primary {
+			border-color: $primary;
+		}
+		&-secondary {
+			border-color: $secondary;
+		}
+		&-ternary {
+			border-color: $ternary;
+		}
+		&-accent {
+			border-color: $accent;
+		}
+	}
+}
+
+.radius-sm {
+	border-radius: 5px;
+}
+
+// FX
+.shadow {
+	box-shadow: 0 0px 5px -2px black;
+}

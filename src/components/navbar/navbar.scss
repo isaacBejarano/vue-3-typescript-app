@@ -1,0 +1,13 @@
+@import "@/sass/_variables";
+
+.navbar {
+	background: linear-gradient(to right, lightcyan, palegreen);
+
+	span {
+		margin: 0 0.5rem;
+	}
+}
+
+.nav-link-separator {
+	color: $primary;
+}

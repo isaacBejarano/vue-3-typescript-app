@@ -1,0 +1,33 @@
+@import "./variables";
+
+// text
+.text {
+	// style
+	&-normal {
+		font-style: normal;
+	}
+	&-italics {
+		font-style: oblique; // generic font type
+		font-style: italics; // font type enabled
+	}
+	// alignment
+	&-left {
+		text-align: left;
+	}
+	&-justify {
+		text-align: justify;
+	}
+	// color
+	&-primary {
+		color: $primary;
+	}
+	&-secondary {
+		color: $secondary;
+	}
+	&-ternary {
+		color: $ternary;
+	}
+	&-accent {
+		color: $accent;
+	}
+}
