@@ -1,9 +1,12 @@
+@import "./variables";
+
 // forms
 .is-invalid {
-	color: red;
-	border: 1px solid red;
+	color: firebrick;
+	border: 1px solid firebrick;
+	background-color: #ffdadf;
 	border-radius: 5px;
 	margin-top: 0.3rem;
 	padding: 0.3rem;
-	font-style: italic;
+	font-size: 0.8rem;
 }

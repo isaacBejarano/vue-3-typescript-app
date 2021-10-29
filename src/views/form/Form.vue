@@ -4,8 +4,10 @@
 
 		<!-- FORM -->
 		<form @submit.prevent="validateForm()" class="form mxw-568 mx-auto text-left p-05 radius-sm shadow">
-			<label for="label0" class="d-block m-1 text-uppercase">
-				{{ labels[0] }}
+			<label for="label0" class="d-block m-1">
+				<span class="text-uppercase">
+					{{ labels[0] }}
+				</span>
 				<input
 					v-model="formdata.name"
 					type="text"
@@ -25,8 +27,10 @@
 				</span>
 			</label>
 
-			<label for="label1" class="d-block m-1 text-uppercase">
-				{{ labels[1] }}
+			<label for="label1" class="d-block m-1">
+				<span class="text-uppercase">
+					{{ labels[1] }}
+				</span>
 				<input
 					v-model="formdata.surname"
 					type="text"
@@ -46,8 +50,10 @@
 				</span>
 			</label>
 
-			<label for="label2" class="d-block m-1 text-uppercase">
-				{{ labels[2] }}
+			<label for="label2" class="d-block m-1">
+				<span class="text-uppercase">
+					{{ labels[2] }}
+				</span>
 				<select v-model="formdata.role" name="role" id="label2" class="ml-1" ref="in2" @change="validateOnTouched('2')">
 					<option value="frontend">Frontend Developer</option>
 					<option value="backend">Backend Developer</option>
@@ -108,14 +114,5 @@
 		background: linear-gradient(to right, powderblue, palegreen);
 	}
 
-	.form {
-		label {
-			color: darkcyan;
-			&:nth-child(n + 4) {
-				color: darkslateblue;
-
-				font-size: 0.8rem;
-			}
-		}
-	}
+	@import "./form";
 </style>
