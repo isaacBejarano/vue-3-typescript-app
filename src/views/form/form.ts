@@ -6,7 +6,7 @@ export default defineComponent({
 	name: "Form",
 
 	setup() {
-		// data
+		/* data */
 
 		const title = "Form Validation";
 
@@ -41,16 +41,16 @@ export default defineComponent({
 			],
 		});
 
-		// template refs
+		/* refs */
 
 		const in0 = ref(null);
 		const in1 = ref(null);
 		const in2 = ref(null);
 		const in3 = ref(null);
 
-		// watchEffect(in0, () => console.warn("W"));
 
-		// methods
+		/* methods */
+		
 		function validateOnTouched(i: string) {
 			let errorType = 0;
 			let v: string;

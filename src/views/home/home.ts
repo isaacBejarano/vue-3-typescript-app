@@ -1,11 +1,12 @@
-import { defineComponent, onMounted, ref } from "vue";
+import { defineComponent } from "vue";
 
 import { RouterOperations } from "@/utils/router-operations";
+import { pegiAccess } from "@/global/constants";
 
 export default defineComponent({
 	name: "Home",
 	setup() {
-		// data
+		/* data */
 
 		const p = "This App is a live example of Vue 3.0 with...";
 
@@ -32,20 +33,12 @@ export default defineComponent({
 		const howToRemoveSS2 = `If you want to try the 'Route Guards' page again,
 		manually reset the PEGI-12 guard by clicking the button below. Then navigate to the 'Route Guards' page.`;
 
-		const appStorage = ref({ pegi: "none" });
-
-		// methods
+		/* methods */
 
 		function resetGuard(): void {
-			RouterOperations.reloadRouteAfterSessionStorageRemoved("pegiAccess");
+			RouterOperations.reloadRouteAfterSessionStorageRemoved(<string>pegiAccess);
 		}
 
-		// hooks
-
-		onMounted(() => {
-			sessionStorage.setItem("pegiAccess", appStorage.value.pegi);
-		});
-
-		return { p, features, appStorage, howToRemoveSS2, resetGuard };
+		return { p, features, howToRemoveSS2, resetGuard };
 	},
 });

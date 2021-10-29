@@ -1,5 +1,5 @@
 <template>
-	<div class="contact">
+	<div class="tdd">
 		<h1>TDD</h1>
 	</div>
 </template>
