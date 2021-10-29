@@ -1,7 +1,6 @@
 <template>
-	<div class="home">
-		<h1>HOME</h1>
-		<img alt="Vue logo" src="../assets/logo.png"  />
+	<div class="contact">
+		<h1>PEGI</h1>
 	</div>
 </template>
 
@@ -9,6 +8,6 @@
 	import { defineComponent } from "vue";
 
 	export default defineComponent({
-		name: "Home",
+		name: "Contact",
 	});
 </script>

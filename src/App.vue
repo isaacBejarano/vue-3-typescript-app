@@ -1,7 +1,11 @@
 <template>
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/contact">Contact</router-link>
+    <router-link to="/pegi">Pegi</router-link>
+    <router-link to="/tdd">TDD</router-link>
+    <router-link to="/lifecycle-hooks">Lifecycle Hooks</router-link>
+    <router-link to="/vuex">VueX</router-link>
   </div>
   <router-view/>
 </template>
