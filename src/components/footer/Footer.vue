@@ -1,15 +1,14 @@
 <template>
 	<footer class="footer shadow">
-		<!-- <span class="d-block">
+		<span class="d-block">
 			{{ title }}
 		</span>
 
 		<span>{{ tech }}</span>
-		
+
 		<span class="d-block">
 			{{ subtitle }}
-		</span> -->
-		FOOTER
+		</span>
 	</footer>
 </template>
 
