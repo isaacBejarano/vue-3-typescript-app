@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
-import Home from "../views/Home.vue";
+import Home from "../views/home/Home.vue";
 
 /* ROUTES */
 
