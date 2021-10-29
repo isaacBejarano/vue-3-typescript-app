@@ -1,5 +1,5 @@
 <template>
-	<div class="contact">
+	<div class="lifecycle">
 		<h1>LIFECYCLE</h1>
 	</div>
 </template>

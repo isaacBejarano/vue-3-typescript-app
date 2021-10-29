@@ -1,38 +1,39 @@
-import { Options, Vue } from "vue-class-component";
+import { defineComponent } from "vue";
+import router from "@/router";
 
-@Options({
-	/* data / props */
-	props: ["qualification", "modal"], // readonly
+import { pegiAccess } from "@/global/constants";
+import { e_NavLinks, e_Storage } from "@/global/enums";
 
-	data() {
-		return {
-			assets: {
-				label: {
-					src: "assets/icons/pegi_12_sm.png",
-					alt: "PEGI-" + this.qualification + " icon",
-				},
-				description: {
-					src: "assets/icons/pegi_sex_sm.png",
-					alt: "sex",
-				},
+export default defineComponent({
+	name: "Modal",
+	props: ["PEGI", "modal"],
+	emits: ["of-modal"],
+	setup(props, { emit }) {
+		/* data */
+		const assets = {
+			label: {
+				src: "assets/icons/pegi_12_sm.png",
+				alt: "PEGI-" + props.PEGI + " icon",
 			},
-			prop_modal: this.modal, // init
+			description: {
+				src: "assets/icons/pegi_sex_sm.png",
+				alt: "sex",
+			},
 		};
-	},
 
-	/* methods */
+		/* methods */
 
-	methods: {
-		bypassGuard(access: boolean) {
+		function bypassGuard(access: boolean) {
 			// set guard
-			sessionStorage.setItem("pegiAccess", access ? "granted" : "denied");
+			sessionStorage.setItem(pegiAccess, access ? e_Storage.granted : e_Storage.denied);
 
 			// auto close
-			this.prop_modal = false; // grab data, not prop -> this.prop_modal !== this.modal
+			emit("of-modal", false);
 
 			// redirect to trigger guard
-			setTimeout(() => this.$router.push(access ? "/pegi" : "/"), 500);
-		},
+			setTimeout(() => router.push(access ? e_NavLinks.pegi : "/"), 500);
+		}
+
+		return { props, assets, bypassGuard };
 	},
-})
-export default class Modal extends Vue {}
+});

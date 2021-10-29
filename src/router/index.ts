@@ -1,42 +1,45 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 
+import { e_NavLinks } from "@/global/enums";
 import Home from "../views/home/Home.vue";
 
 /* ROUTES */
 
 const routes: Array<RouteRecordRaw> = [
 	{
-		path: "/",
+		path: e_NavLinks.home,
 		name: "Home",
 		component: Home,
 	},
+
+	// lazy
 	{
-		path: "/form",
+		path: e_NavLinks.form,
 		name: "Form",
 		component: () => import(/* webpackChunkName: "Form" */ "@/views/form/Form.vue"),
 	},
 	{
-		path: "/pegi",
+		path: e_NavLinks.pegi,
 		name: "Pegi",
 		component: () => import(/* webpackChunkName: "Pegi" */ "@/views/pegi/Pegi.vue"),
 	},
 	{
-		path: "/tdd",
+		path: e_NavLinks.tdd,
 		name: "TDD",
 		component: () => import(/* webpackChunkName: "TDD" */ "@/views/tdd/TDD.vue"),
 	},
 	{
-		path: "/lifecycle-hooks",
+		path: e_NavLinks.lifecycle,
 		name: "Lifecycle",
 		component: () => import(/* webpackChunkName: "Lifecycle" */ "@/views/lifecycle/Lifecycle.vue"),
 	},
 	{
-		path: "/vuex",
+		path: e_NavLinks.vuex,
 		name: "VueX",
 		component: () => import(/* webpackChunkName: "VueX" */ "@/views/vuex/VueX.vue"),
 	},
 
-	/* redirects */
+	// redirects
 	{
 		path: "/:catchAll(.*)",
 		redirect: "/",
@@ -63,7 +66,7 @@ PER-ROUTE GUARDS
 	beforeEnter: [(to, from, [next]) => {}, (to, from, [next]) => {}, ...]
 	beforeEnter: (to, form, [next]) => next({ name: "User", params: { id: 200 } })
 
-IN-COMPONENT GUARDS
+IN-COMPONENT GUARDS - outta setup()
 	beforeRouteEnter: (to, from, [next]) => { 
 		// access class attrs.
 		next((vm: any) => vm.title = 'New Title');
@@ -71,6 +74,6 @@ IN-COMPONENT GUARDS
 	beforeRouteUpdate: (to, from) => {}
 	beforeRouteLeave: (to, from) => {}
 
-	// you can also concatenate 'beforeRouteEnter' i array, like 'beforeEnter' per-route guards posibility
+	// you can also concatenate 'beforeRouteEnter' and array, like 'beforeEnter' per-route guards posibility
 
 */

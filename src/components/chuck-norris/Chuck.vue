@@ -4,21 +4,22 @@
 		<p class="text-accent text-justify text-italics mt-1">"{{ joke }}"</p>
 	</div>
 </template>
+
 <script lang="ts">
-	import { watchEffect } from "vue";
-	import { Vue } from "vue-class-component";
-	import store from "@/store";
+	// import { watchEffect } from "vue";
+	// import { Vue } from "vue-class-component";
+	// import store from "@/store";
 
-	export default class Chuck extends Vue {
-		joke = "";
+	// export default class Chuck extends Vue {
+	// 	joke = "";
 
-		beforeMount() {
-			// VUEX @watch
-			watchEffect(() => {
-				if (store.getters.getChuck !== "") {
-					this.joke = store.getters.getChuck;
-				}
-			});
-		}
-	}
+	// 	beforeMount() {
+	// 		// VUEX @watch
+	// 		watchEffect(() => {
+	// 			if (store.getters.getChuck !== "") {
+	// 				this.joke = store.getters.getChuck;
+	// 			}
+	// 		});
+	// 	}
+	// }
 </script>

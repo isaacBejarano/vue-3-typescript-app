@@ -1,5 +1,5 @@
 <template>
-	<div class="contact">
+	<div class="vuex">
 		<h1>VueX</h1>
 	</div>
 </template>
