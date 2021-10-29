@@ -4,11 +4,11 @@ export default defineComponent({
 	name: "Navbar",
 	setup() {
 		const links = [
-			["Home", "/"],
-			["Form Validation", "/contact"],
-			["Route Guards & Modals", "/pegi"],
-			["Lifecycle Hooks", "/lifecycle-hooks"],
-			["VueX / Dynamic & Async Components", "/vuex"],
+			["home", "/"],
+			["form validation", "/form"],
+			["route guards & modals", "/pegi"],
+			["lifecycle hooks", "/lifecycle-hooks"],
+			["vueX / dynamic & async components", "/vuex"],
 			// ["TDD", "/tdd"],
 			// ["Slots", "/slots"],
 			// ["Teleport", "/teleport"],

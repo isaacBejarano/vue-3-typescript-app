@@ -11,9 +11,9 @@ const routes: Array<RouteRecordRaw> = [
 		component: Home,
 	},
 	{
-		path: "/contact",
-		name: "Contact",
-		component: () => import(/* webpackChunkName: "Contact" */ "@/views/contact/Contact.vue"),
+		path: "/form",
+		name: "Form",
+		component: () => import(/* webpackChunkName: "Form" */ "@/views/form/Form.vue"),
 	},
 	{
 		path: "/pegi",

@@ -3,6 +3,7 @@
 // text
 .text {
 	// style
+
 	&-normal {
 		font-style: normal;
 	}
@@ -10,14 +11,18 @@
 		font-style: oblique; // generic font type
 		font-style: italics; // font type enabled
 	}
+
 	// alignment
+
 	&-left {
 		text-align: left;
 	}
 	&-justify {
 		text-align: justify;
 	}
+
 	// color
+
 	&-primary {
 		color: $primary;
 	}
@@ -29,5 +34,16 @@
 	}
 	&-accent {
 		color: $accent;
+	}
+
+	// case
+	&-lowercase {
+		text-transform: lowercase;
+	}
+	&-uppercase {
+		text-transform: uppercase;
+	}
+	&-capitalize {
+		text-transform: capitalize;
 	}
 }
