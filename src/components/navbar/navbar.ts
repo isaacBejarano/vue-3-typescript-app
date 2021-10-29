@@ -1,9 +1,9 @@
-import { defineComponent, ref } from "vue";
+import { defineComponent } from "vue";
 
 export default defineComponent({
 	name: "Navbar",
 	setup() {
-		const links = ref([
+		const links = [
 			["Home", "/"],
 			["Form Validation", "/contact"],
 			["Route Guards & Modals", "/pegi"],
@@ -14,7 +14,7 @@ export default defineComponent({
 			// ["Teleport", "/teleport"],
 			// ["Dynamic Components", "/dynamic-components"],
 			// ["HTTP Requests", "/http-requests"],
-		]);
+		];
 
 		return { links };
 	},
