@@ -5,6 +5,8 @@ import { RouterOperations } from "@/utils/router-operations";
 export default defineComponent({
 	name: "Home",
 	setup() {
+		// data
+
 		const p = "This App is a live example of Vue 3.0 with...";
 
 		const features = [
@@ -32,11 +34,14 @@ export default defineComponent({
 
 		const appStorage = ref({ pegi: "none" });
 
+		// methods
+
 		function resetGuard(): void {
 			RouterOperations.reloadRouteAfterSessionStorageRemoved("pegiAccess");
 		}
 
 		// hooks
+
 		onMounted(() => {
 			sessionStorage.setItem("pegiAccess", appStorage.value.pegi);
 		});
