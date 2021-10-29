@@ -1,0 +1,22 @@
+@import "./variables";
+
+// layout
+.d-block {
+	display: block;
+}
+
+.mxw-320 {
+	max-width: $xs;
+}
+
+.mxw-568 {
+	max-width: $sm;
+}
+
+.mxw-768 {
+	max-width: $md;
+}
+
+.mx-auto {
+	margin: 0 auto;
+}

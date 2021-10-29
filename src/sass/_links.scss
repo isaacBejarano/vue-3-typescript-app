@@ -1,0 +1,10 @@
+@import "./variables";
+
+// links
+.nav-link {
+	color: $primary;
+	text-decoration: none;
+	&.router-link-exact-active {
+		color: $accent;
+	}
+}

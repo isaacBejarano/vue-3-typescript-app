@@ -1,0 +1,9 @@
+@import "./variables";
+
+// img
+.responsive-img {
+	@media screen and (max-width: $md) {
+		width: 100%;
+		height: auto;
+	}
+}
