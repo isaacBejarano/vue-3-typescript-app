@@ -8,9 +8,9 @@ export default defineComponent({
 		const links = [
 			["home", e_NavLinks.home],
 			["form validation", e_NavLinks.form],
-			["route guards & modals", e_NavLinks.pegi],
+			["route guards & modals", e_NavLinks.guard],
 			["lifecycle hooks", e_NavLinks.lifecycle],
-			["vueX / dynamic & async components", e_NavLinks.vuex],
+			// ["vueX / dynamic & async components", e_NavLinks.vuex],
 			// ["TDD", "/tdd"],
 			// ["Slots", "/slots"],
 			// ["Teleport", "/teleport"],

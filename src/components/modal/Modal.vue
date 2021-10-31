@@ -4,11 +4,7 @@
 	</transition>
 
 	<transition name="blur">
-		
 		<div class="modal radius-sm shadow" v-if="modal">
-		{{ PEGI }}
-		{{ modal }}
-		
 			<div class="icon-group m-0">
 				<a href="https://pegi.info/" target="_blanck" rel="nofollow noopener noreferrer">
 					<img :src="require('@/' + assets.label.src)" :alt="assets.label.alt" width="80" height="98" />
