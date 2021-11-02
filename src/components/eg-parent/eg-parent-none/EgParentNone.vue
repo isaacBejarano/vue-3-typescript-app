@@ -1,54 +1,61 @@
 <template>
 	<section class="eg-parent-none">
-		<h3>
-			e.g
-			<span class="text-capitalize">
-				{{ title }}
-			</span>
+		<h3 class="text-capitalize">
+			{{ title }}
+
+			<small class="d-block  text-lowercase">
+				<code>
+					counter:
+
+					{{ count }}
+				</code>
+			</small>
 		</h3>
 
-		<hr />
-
-		<ul class="btn-group">
-			<li v-for="post in posts" :key="post" @click="selectedPost = post" class="btn border-primary radius-sm">
-				{{ post.title }}
+		<ul class="btn-group mt-0 mb-2">
+			<li class="btn border-vue p-05 radius-sm" @click="updateCounter(0)">
+				<span class="d-block">
+					reset
+				</span>
+			</li>
+			<li class="btn border-accent p-05 radius-sm" @click="updateCounter(1)">
+				<span class="d-block" style="width: 20px">
+					+
+				</span>
+			</li>
+			<li class="btn border-accent p-05 radius-sm" @click="updateCounter(-1)">
+				<span class="d-block" style="width: 20px">
+					-
+				</span>
 			</li>
 		</ul>
 
-		<div v-if="selectedPost">
-			<article class="p-1 border radius-sm">
-				<h4>{{ selectedPost.title }}</h4>
-				<p class="text-justify text-italics">{{ selectedPost.content }}</p>
-			</article>
+		<div class="border-ternary border-1 radius-sm p-1">
+			<EgChildNone />
 		</div>
-		<strong v-else>
-			Click on a Post!
-		</strong>
 	</section>
 </template>
 
 <script lang="ts">
 	import { defineComponent, ref } from "vue";
 
+	import EgChildNone from "@/components/eg-child/eg-child-none/EgChildNone.vue";
+
 	export default defineComponent({
 		name: "EgParentNone",
+		components: {
+			EgChildNone,
+		},
 		setup() {
-			const title = "parent none";
-			const posts = ref([
-				{
-					title: "Post 1",
-					content:
-						"	Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis iste officia cumque necessitatibus natus magnam quaerat voluptates eligendi praesentium, voluptatum culpa in placeat debitis. Aut suscipit impedit perferendis magnam atque.",
-				},
-				{
-					title: "Post 2",
-					content:
-						"Nesciunt laudantium ratione amet quas quasi quo laboriosam dicta itaque deleniti delectus est assumenda mollitia, eaque voluptatum repellat odit et! Perferendis iste possimus dolor ullam et ipsum id necessitatibus sapiente!",
-				},
-			]);
-			const selectedPost = ref(null);
+			const title = "parent uncommunicated";
+			const defaultCounter = 10;
+			const count = ref(defaultCounter);
 
-			return { title, posts, selectedPost };
+			function updateCounter(n: number) {
+				count.value = n === 0 ? defaultCounter : (count.value += n);
+			}
+
+			return { title, count, updateCounter };
 		},
 	});
 </script>
@@ -61,16 +68,35 @@
 			list-style: none;
 			padding-left: 0;
 			li {
-				margin: 0.5em;
-				padding: 0.5em;
-				&:hover {
-					color: white;
-					background: $primary;
+				&:not(.border-vue) {
+					margin: 0.5em;
+					padding: 0.5em;
+					&:hover {
+						color: white;
+						background: $accent;
+					}
+					&:active {
+						background: lighten($accent, 15%);
+					}
 				}
-				&:active {
-					background: lighten($primary, 15%);
+
+				&.border-vue {
+					margin: 0.5em;
+					padding: 0.5em;
+					&:hover {
+						color: white;
+						background: $vue;
+					}
+					&:active {
+						background: lighten($vue, 15%);
+					}
 				}
 			}
+		}
+
+		code {
+			color: $accent;
+			font-size: 1.3em;
 		}
 	}
 </style>

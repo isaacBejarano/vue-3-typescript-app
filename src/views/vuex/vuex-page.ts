@@ -11,11 +11,11 @@ export default defineComponent({
 	setup() {
 		const title = {
 			fragment1: "uncommunicated",
-			fragment2: "emitter-driven communication",
-			fragment3: "VueX communication",
+			fragment2: "props/emitter-driven",
+			fragment3: "state-driven",
 		};
 
-		const componentName = ref<string>(e_DynamicComponents.EgParentNone); // def
+		const componentName = ref<string | any>(null); // def
 
 		function dynamicLoad(name: e_DynamicComponents) {
 			componentName.value = name;

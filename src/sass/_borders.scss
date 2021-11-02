@@ -2,7 +2,8 @@
 
 // border / outline
 .border {
-	border: 1px solid gray !important;
+	border: 1px solid gray ;
+	// color
 	&-primary {
 		border: 1px solid $primary !important;
 	}
@@ -14,6 +15,14 @@
 	}
 	&-accent {
 		border: 1px solid $accent !important;
+	}
+	&-vue {
+		border: 1px solid $vue !important;
+	}
+
+	// width
+	&-1 {
+		border-width: 3px !important;
 	}
 }
 

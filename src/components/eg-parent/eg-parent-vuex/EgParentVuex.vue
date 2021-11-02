@@ -1,12 +1,9 @@
 <template>
-	<h3>
-		e.g
-		<span class="text-capitalize">
-			{{ title }}
-		</span>
+	<h3 class="text-capitalize">
+		{{ title }}
 	</h3>
 
-		<hr />
+	<hr />
 </template>
 
 <script>
