@@ -28,11 +28,16 @@ const routes: Array<RouteRecordRaw> = [
 		name: "Lifecycle",
 		component: () => import(/* webpackChunkName: "Lifecycle" */ "@/views/lifecycle/Lifecycle.vue"),
 	},
-	// {
-	// 	path: e_NavLinks.vuex,
-	// 	name: "VueX",
-	// 	component: () => import(/* webpackChunkName: "VueX" */ "@/views/vuex/VueX.vue"),
-	// },
+	{
+		path: e_NavLinks.dynamic,
+		name: "Dynamic",
+		component: () => import(/* webpackChunkName: "Dynamic" */ "@/views/dynamic/Dynamic.vue"),
+	},
+	{
+		path: e_NavLinks.vuex,
+		name: "VueX",
+		component: () => import(/* webpackChunkName: "VueX" */ "@/views/vuex/VueX.vue"),
+	},
 	// {
 	// 	path: e_NavLinks.tdd,
 	// 	name: "TDD",

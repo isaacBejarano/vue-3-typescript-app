@@ -2,20 +2,18 @@
 
 // border / outline
 .border {
-	border: 1px solid gray;
-	&-color {
-		&-primary {
-			border-color: $primary;
-		}
-		&-secondary {
-			border-color: $secondary;
-		}
-		&-ternary {
-			border-color: $ternary;
-		}
-		&-accent {
-			border-color: $accent;
-		}
+	border: 1px solid gray !important;
+	&-primary {
+		border: 1px solid $primary !important;
+	}
+	&-secondary {
+		border: 1px solid $secondary !important;
+	}
+	&-ternary {
+		border: 1px solid $ternary !important;
+	}
+	&-accent {
+		border: 1px solid $accent !important;
 	}
 }
 
