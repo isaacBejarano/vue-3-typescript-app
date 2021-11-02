@@ -9,8 +9,15 @@ enum e_NavLinks {
 	form = "/form",
 	guard = "/guard",
 	lifecycle = "/lifecycle-hooks",
+	dynamic = "/dynamic",
 	vuex = "/vuex",
 	tdd = "/tdd",
 }
 
-export { e_Storage, e_NavLinks };
+enum e_DynamicComponents {
+	EgParentNone = "EgParentNone",
+	EgParentEmit = "EgParentEmit",
+	EgParentVuex = "EgParentVuex",
+}
+
+export { e_Storage, e_NavLinks, e_DynamicComponents };

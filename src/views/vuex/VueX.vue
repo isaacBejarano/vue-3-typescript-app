@@ -2,7 +2,7 @@
 	<main class="vuex py-5">
 		<h1 class="mb-2">VueX</h1>
 
-		<section class="dynamics mxw-568 mx-auto p-1 mb-2 shadow radius-sm">
+		<section class="mxw-568 mx-auto p-1 mb-2 shadow radius-sm">
 			<h2>
 				<span class="d-block text-accent">{{ title.fragment1 }}</span>
 				<span class="d-block">
@@ -15,7 +15,7 @@
 
 			<p class="text-justify text-italics">
 				By clicking one of the buttons below, a
-				<b>parent</b>
+				<b>parent</b> 
 				component will load, and so its
 				<b>child</b>
 				and
@@ -60,28 +60,51 @@
 				https://isaacbejarano.com/vuex-counter/
 			</a>
 		</section>
+
+		<!-- dynamic components -->
+		<h2>dynamic components</h2>
+		<ul class="btn-group">
+			<li class="btn border-accent radius-sm" @click="dynamicLoad('EgParentNone')">
+				{{ title.fragment1 }}
+			</li>
+			<li class="btn border-accent radius-sm" @click="dynamicLoad('EgParentEmit')">
+				{{ title.fragment2 }}
+			</li>
+			<li class="btn radius-sm border-accent" @click="dynamicLoad('EgParentVuex')">
+				{{ title.fragment3 }}
+			</li>
+		</ul>
+
+		<section class="dynamics mxw-568 mx-auto p-1 mb-2 shadow radius-sm">
+			<keep-alive>
+				<component :is="componentName"></component>
+			</keep-alive>
+		</section>
 	</main>
 </template>
 
-<script lang="ts">
-	import { defineComponent } from "vue";
-
-	export default defineComponent({
-		name: "VueX",
-		setup() {
-			const title = {
-				fragment1: "VueX",
-				fragment2: "vs.",
-				fragment3: "emitter-driven communication",
-			};
-
-			return { title };
-		},
-	});
-</script>
+<script lang="ts" src="./vuex-page.ts"></script>
 
 <style lang="scss" scoped>
+	@import "@/sass/_variables";
+
 	.vuex {
 		background: linear-gradient(to right, lemonchiffon, palegreen);
+
+		ul {
+			list-style: none;
+			padding-left: 0;
+			li {
+				margin: 0.5em;
+				padding: 0.5em;
+				&:hover {
+					color: white;
+					background: $accent;
+				}
+				&:active {
+					background: lighten($accent, 15%);
+				}
+			}
+		}
 	}
 </style>

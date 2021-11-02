@@ -5,5 +5,5 @@
   from = "/*"
   to = "https://vue3-vuex-spa-app.netlify.app/"
   status = 301
-  # force = true # COMMENT: ensure that we always redirect
+  # force = true # COMMENT: ensure that we always redirect (def is true)
   headers = {X-From = "Netlify"}
