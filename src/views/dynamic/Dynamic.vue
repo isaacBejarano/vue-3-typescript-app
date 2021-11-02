@@ -2,15 +2,6 @@
 	<main class="dynamic py-5">
 		<h1 class="mb-2 text-capitalize">{{ title }}</h1>
 
-		<ul class="btn-group">
-			<li class="btn border-accent radius-sm" @click="dynamicLoad('Post1')">
-				{{ blog.post1 }}
-			</li>
-			<li class="btn border-accent radius-sm" @click="dynamicLoad('Post2')">
-				{{ blog.post2 }}
-			</li>
-		</ul>
-
 		<section class="mxw-568 mx-auto p-1 mb-2 shadow radius-sm">
 			<p class="text-justify">
 				We'll load two components dynamically: Post 1 and Post 2. The first has dynamic data while the second has only
@@ -41,8 +32,19 @@
 			</div>
 		</section>
 
-		<!-- dynamic components -->
 		<section class="dynamic mxw-568 mx-auto p-1 mb-2 shadow radius-sm">
+			<ul class="btn-group">
+				<li class="btn border-accent radius-sm" @click="dynamicLoad('Post1')">
+					{{ blog.post1 }}
+				</li>
+				<li class="btn border-accent radius-sm" @click="dynamicLoad('Post2')">
+					{{ blog.post2 }}
+				</li>
+			</ul>
+
+			<hr>
+
+			<!-- dynamic components -->
 			<keep-alive v-if="KA">
 				<component :is="componentName" :KA="KA"></component>
 			</keep-alive>

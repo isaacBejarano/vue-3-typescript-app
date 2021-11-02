@@ -12,6 +12,7 @@ enum e_NavLinks {
 	dynamic = "/dynamic",
 	vuex = "/vuex",
 	tdd = "/tdd",
+	async = "/async",
 }
 
 enum e_DynamicComponents {
