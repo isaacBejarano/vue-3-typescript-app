@@ -19,18 +19,19 @@
 				cluster of nested components shows how data do flow from one component to the other, by using event emitters and
 				listeners. Here, the parent's global counter will definitely communicate the data state throughout the nested
 				components and so will do the nested local counters. But, when components communice throughout more than 1 level
-				of nesting, managing that state will be convoluted and verbose, so more prone to bugs.
+				of nesting, managing that state will be convoluted and verbose, so more prone to bugs, plus props/emitter-driven
+				does not work for sibling components.
 			</p>
 
 			<p class="text-justify">
 				The
-				<b class="text-accent">state-driven</b>
+				<b class="text-accent">state-managed</b>
 				cluster of nested components shows how data do flow from one component to the other, by using the
 				<code>VueX</code>
 				store. Here, the parent's global counter will definitely communicate the data state throughout the nested
 				components and so will do the nested local counters. VueX will do it clean, easy-to-read and easy-to-maintain
-				throughout the 3 levels of nesting or more, by using actions and mutations, both triggered by dispatchers -to
-				update data- and regular getters -to read data.
+				throughout the 3 levels of nesting or more, by using actions and mutations, triggered by dispatchers and commits
+				-to update data- and accessing the VueX reactive object with local computed() returning the VueX state proerty we are interested in -to read data.
 			</p>
 
 			<p class="text-justify text-italics text-ternary mt-2">
@@ -42,11 +43,23 @@
 				<b>grand-child</b>
 				nested components. Thus, giving us a 3 level nesting.
 			</p>
+
+			<p class="text-justify text-italics text-ternary">
+				Also, notice how the
+				<b>
+					state is persisted by VueX, without the need to use
+					<code class="unstyled-code">
+						keep-alive
+					</code>
+				</b>
+				when dynamically loading the Parent components below. And how it just happens the opposite when loading the
+				uncommunicated or event-driven Parent
+			</p>
 		</section>
 
 		<!-- dynamic components -->
-		<h2>Type of Components intercommunication</h2>
-		<small class="text-italics">dynamic components</small>
+		<h2>Types of Component Intercommunication</h2>
+		<small class="text-italics">*dynamic parent components</small>
 
 		<ul class="btn-group mt-0 mb-2">
 			<li class="btn border-accent radius-sm" @click="dynamicLoad('EgParentNone')">
@@ -68,7 +81,7 @@
 	</main>
 </template>
 
-<script lang="ts" src="./vuex-page.ts"></script>
+<script lang="ts" src="./vuex-page"></script>
 
 <style lang="scss" scoped>
 	@import "@/sass/_variables";
@@ -95,6 +108,11 @@
 
 	code {
 		color: mediumvioletred;
-		font-size: 1.3rem;
+		&:not(.unstyled-code) {
+			font-size: 1.3rem;
+		}
+		&.unstyled-code {
+			font-size: 1rem;
+		}
 	}
 </style>

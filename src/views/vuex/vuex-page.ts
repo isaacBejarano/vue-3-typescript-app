@@ -12,7 +12,7 @@ export default defineComponent({
 		const title = {
 			fragment1: "uncommunicated",
 			fragment2: "props/emitter-driven",
-			fragment3: "state-driven",
+			fragment3: "state-managed",
 		};
 
 		const componentName = ref<string | any>(null); // def

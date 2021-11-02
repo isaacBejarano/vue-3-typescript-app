@@ -31,28 +31,29 @@
 		</ul>
 
 		<div class="border-ternary border-1 radius-sm p-1">
-			<!-- <EgChildEmit :count="count" @childCount="updateCount($event, payload)" /> -->
+			<EgChildVuex />
 		</div>
 	</section>
 </template>
 
 <script lang="ts">
-	import { defineComponent, ref } from "vue";
+	import { computed, defineComponent } from "vue";
+	import store from "@/store";
 
-	// import EgChildEmit from "@/components/eg-child/eg-child-emit/EgChildEmit.vue";
+	import EgChildVuex from "@/components/eg-child/eg-child-vuex/EgChildVuex.vue";
 
 	export default defineComponent({
 		name: "EgParentVuex",
 		components: {
-			// EgChildEmit,
+			EgChildVuex,
 		},
 		setup() {
-			const title = "parent props/emitter";
-			const defaultCounter = 0;
-			const count = ref(defaultCounter);
+			const title = "parent vuex";
+			const count = computed(() => store.state.count);
 
 			function updateCount(n: number) {
-				count.value = n === 0 ? defaultCounter : (count.value += n);
+				if (n === 0) store.commit("resetCount");
+				else store.commit("mutateCount", n);
 			}
 
 			return { title, count, updateCount };

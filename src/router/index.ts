@@ -38,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
 		name: "VueX",
 		component: () => import(/* webpackChunkName: "VueX" */ "@/views/vuex/VueX.vue"),
 	},
+	{
+		path: e_NavLinks.async,
+		name: "Async",
+		component: () => import(/* webpackChunkName: "Async" */ "@/views/async/Async.vue"),
+	},
 	// {
 	// 	path: e_NavLinks.tdd,
 	// 	name: "TDD",
