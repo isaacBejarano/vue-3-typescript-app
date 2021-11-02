@@ -5,7 +5,7 @@ export default defineComponent({
 
 	setup() {
 		const title = "Vue 3.0";
-		const subtitle = "sample features";
+		const subtitle = "features & ecosystem";
 
 		return { title, subtitle };
 	},
