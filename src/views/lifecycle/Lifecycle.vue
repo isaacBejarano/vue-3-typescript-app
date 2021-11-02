@@ -1,17 +1,16 @@
 <template>
 	<main class="lifecycle py-5">
-		<h1 class="p-1 text-capitalize">{{ title }}</h1>
-		<h3 ref="pop" class="lol">LOL</h3>
+		<h1 ref="refTitle" class="p-1 text-capitalize">{{ title }}</h1>
 
 		<section class="mxw-568 mx-auto mb-2 p-1 radius-sm shadow">
 			<h2>
-				operate on
+				operate once
 				<code>mounted</code>
 			</h2>
-			<span class="d-block">programmatic CSS styling</span>
+			<span class="d-block">programmatic textContent</span>
 
 			<p ref="mounted">
-				Change color once view is mounted
+				Switch title once view is mounted
 			</p>
 			<button type="button" class="p-05 radius-sm" @click="operateOnMounted()">Try Mounted</button>
 		</section>
@@ -23,11 +22,13 @@
 			</h2>
 			<span class="d-block">programmatic component update</span>
 			<p>
-				The button below will change the title. Then we'll use the 'update' hook to trigger a change in the previuos
-				programatically-colored text. Thus, we'll set its color to red, automatically on update event.
+				Type in some text in the input below.
+				That will dynamically update the title value.
+				Then we'll use the 'update' hook
+				to randomly change its color
 			</p>
 
-			<!-- <button type="button" class="p-05 radius-sm" @click="operateOnUpdated()">Try Updated</button> -->
+			<input type="text" v-model="title" class="p-05 radius-sm" />
 		</section>
 	</main>
 </template>

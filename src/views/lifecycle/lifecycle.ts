@@ -1,54 +1,41 @@
 // export default class TDD extends Vue {
-// 	title: string = setup(() => ref("Lifecycle Hooks"));
+// 	refTitle: string = setup(() => ref("Lifecycle Hooks"));
 // 	p1!: HTMLElement;
 
-import { defineComponent, isRef, onBeforeMount, onMounted, proxyRefs, reactive, Ref, ref } from "vue";
-
-// 	mounted() {
-// 		// this.$nextTick(() => {
-// 		this.p1 = <HTMLElement>this.$refs.mounted;
-// 		this.p1.style.color = "blue";
-// 		// });
-// 	}
-
-// 	// methods
-// 	operateOnMounted() {
-// 		this.p1.style.color = this.p1.style.color === "blue" ? "darkgoldenrod" : "blue";
-// 	}
-
-// 	operateOnUpdated() {
-// 		this.title = "The title changed!";
-// 	}
-
-// 	updated() {
-// 		this.p1.style.color = "red";
-// 	}
-// }
+import { defineComponent, onBeforeMount, onMounted, onUpdated, ref } from "vue";
+import randomRGB from "@/utils/rgb-generator";
 
 export default defineComponent({
 	setup() {
 		/* data */
 
-		const title = ref<string>("lifecycle hooks");
-		const lol = ref<any>("pop");
+		let refTitle: any = ref<any>("");
+		let title: any = ref<any>("title");
+
+		onBeforeMount(() => {
+			console.log("beforeMount: => refTitle textContent is", refTitle.value.textContent);
+		});
+
+		onMounted(() => {
+			refTitle.value.textContent = "lifecycle hooks";
+			console.log("on mounted: programatic operation => refTitle textContent is", refTitle.value.textContent);
+		});
+
+		onUpdated(() => {
+			const [R, G, B] = randomRGB();
+
+			refTitle.value.style.color = `rgb(${R},${G},${B})`;
+			console.log("on mounted: programatic operation => subrefTitle color is", refTitle.value.style.color);
+		});
 
 		/* methods */
 
 		function operateOnMounted() {
-			// title.value.style.color = this.p1.style.color === "blue" ? "darkgoldenrod" : "blue";
-			console.log(title.value);
-			console.log(proxyRefs(lol.value.innerText))
-			title.value = "lifecycle cooks";
+			refTitle.value.textContent =
+				refTitle.value.textContent === "lifecycle hooks" ? "bicycle looks" : "lifecycle hooks";
+			console.log("once mounted: programatic operation => refTitle is", refTitle.value.textContent);
 		}
 
-		onMounted(() => {
-			console.log(lol.value.innerText);
-		});
-
-		onBeforeMount(() => {
-			console.log(lol.value.innerText);
-		});
-
-		return { title, operateOnMounted };
+		return { refTitle, title, operateOnMounted };
 	},
 });
