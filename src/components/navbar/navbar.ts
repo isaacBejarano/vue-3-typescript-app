@@ -10,6 +10,7 @@ export default defineComponent({
 			["form validation", e_NavLinks.form],
 			["route guards & modals", e_NavLinks.guard],
 			["lifecycle hooks", e_NavLinks.lifecycle],
+			["vueX", e_NavLinks.vuex],
 			// ["vueX / dynamic & async components", e_NavLinks.vuex],
 			// ["TDD", "/tdd"],
 			// ["Slots", "/slots"],
