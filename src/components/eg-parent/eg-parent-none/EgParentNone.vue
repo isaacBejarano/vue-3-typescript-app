@@ -48,7 +48,7 @@
 		},
 		setup() {
 			const title = "parent uncommunicated";
-			const defaultCounter = 10;
+			const defaultCounter = 0;
 			const count = ref(defaultCounter);
 
 			function updateCounter(n: number) {

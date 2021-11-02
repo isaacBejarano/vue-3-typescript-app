@@ -12,13 +12,11 @@ export default defineComponent({
 			["lifecycle hooks", e_NavLinks.lifecycle],
 			["dynamic components & keep-alive", e_NavLinks.dynamic],
 			["vueX", e_NavLinks.vuex],
-			// ["custom store", e_NavLinks.vuex],
-			// ["Async components", e_NavLinks.vuex],
-			// ["TDD", "/tdd"],
+			// ["custom reactive store", e_NavLinks.vuex],
+			// ["HTTP & Async components", e_NavLinks.vuex],
 			// ["Slots", "/slots"],
 			// ["Teleport", "/teleport"],
-			// ["Dynamic Components", "/dynamic-components"],
-			// ["HTTP Requests", "/http-requests"],
+			// ["TDD with JEST", "/tdd"],
 		];
 
 		return { links };

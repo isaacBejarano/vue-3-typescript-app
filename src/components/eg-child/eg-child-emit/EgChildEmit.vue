@@ -13,12 +13,12 @@
 		</h3>
 
 		<ul class="btn-group mt-0 mb-2">
-			<li class="btn border-ternary p-05 radius-sm" @click="updateCounter(1)">
+			<li class="btn border-ternary p-05 radius-sm" @click="emitIncreaseForCount(1)">
 				<span class="d-block" style="width: 20px">
 					+
 				</span>
 			</li>
-			<li class="btn border-ternary p-05 radius-sm" @click="updateCounter(-1)">
+			<li class="btn border-ternary p-05 radius-sm" @click="emitIncreaseForCount(-1)">
 				<span class="d-block" style="width: 20px">
 					-
 				</span>
@@ -26,13 +26,13 @@
 		</ul>
 
 		<div class="border-1 border-secondary radius-sm p-1">
-			<EgGrandEmit />
+			<EgGrandEmit :count="count" @grandChildCount="emitIncreaseForCount($event, payload)" />
 		</div>
 	</section>
 </template>
 
 <script lang="ts">
-	import { defineComponent, ref } from "vue";
+	import { defineComponent } from "vue";
 
 	import EgGrandEmit from "@/components/eg-grand/eg-grand-emit/EgGrandEmit.vue";
 
@@ -41,17 +41,16 @@
 		components: {
 			EgGrandEmit,
 		},
-		setup() {
+		props: ["count"],
+		emits: ["childCount"],
+		setup(_props, { emit }) {
 			const title = "child props/emitter";
 
-			const defaultCounter = 0;
-			const count = ref(defaultCounter);
-
-			function updateCounter(n: number) {
-				count.value += n;
+			function emitIncreaseForCount(payload: number) {
+				emit("childCount", payload);
 			}
 
-			return { title, count, updateCounter };
+			return { title, emitIncreaseForCount };
 		},
 	});
 </script>

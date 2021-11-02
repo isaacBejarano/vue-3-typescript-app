@@ -13,17 +13,17 @@
 		</h3>
 
 		<ul class="btn-group mt-0 mb-2">
-			<li class="btn border-vue p-05 radius-sm" @click="updateCounter(0)">
+			<li class="btn border-vue p-05 radius-sm" @click="updateCount(0)">
 				<span class="d-block">
 					reset
 				</span>
 			</li>
-			<li class="btn border-accent p-05 radius-sm" @click="updateCounter(1)">
+			<li class="btn border-accent p-05 radius-sm" @click="updateCount(1)">
 				<span class="d-block" style="width: 20px">
 					+
 				</span>
 			</li>
-			<li class="btn border-accent p-05 radius-sm" @click="updateCounter(-1)">
+			<li class="btn border-accent p-05 radius-sm" @click="updateCount(-1)">
 				<span class="d-block" style="width: 20px">
 					-
 				</span>
@@ -31,7 +31,7 @@
 		</ul>
 
 		<div class="border-ternary border-1 radius-sm p-1">
-			<EgChildEmit />
+			<EgChildEmit :count="count" @childCount="updateCount($event, payload)" />
 		</div>
 	</section>
 </template>
@@ -48,14 +48,14 @@
 		},
 		setup() {
 			const title = "parent props/emitter";
-			const defaultCounter = 10;
+			const defaultCounter = 0;
 			const count = ref(defaultCounter);
 
-			function updateCounter(n: number) {
+			function updateCount(n: number) {
 				count.value = n === 0 ? defaultCounter : (count.value += n);
 			}
 
-			return { title, count, updateCounter };
+			return { title, count, updateCount };
 		},
 	});
 </script>
