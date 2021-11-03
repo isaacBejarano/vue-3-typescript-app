@@ -31,7 +31,8 @@
 				store. Here, the parent's global counter will definitely communicate the data state throughout the nested
 				components and so will do the nested local counters. VueX will do it clean, easy-to-read and easy-to-maintain
 				throughout the 3 levels of nesting or more, by using actions and mutations, triggered by dispatchers and commits
-				-to update data- and accessing the VueX reactive object with local computed() returning the VueX state proerty we are interested in -to read data.
+				-to update data- and accessing the VueX reactive object with local computed() returning the VueX state proerty
+				we are interested in -to read data.
 			</p>
 
 			<p class="text-justify text-italics text-ternary mt-2">
@@ -48,18 +49,47 @@
 				Also, notice how the
 				<b>
 					state is persisted by VueX, without the need to use
-					<code class="unstyled-code">
+					<code class="unstyled-code text-accent">
 						keep-alive
 					</code>
 				</b>
 				when dynamically loading the Parent components below. And how it just happens the opposite when loading the
 				uncommunicated or event-driven Parent
 			</p>
+
+			<p class="text-justify text-italics text-ternary">
+				Finally notice how the Parent components are loaded dynamically but also
+				<b>
+					asynchronously.
+				</b>
+				To see how Parent components are asynchronously loaded, go to Inspector (press F12), then go to the
+				<b>Network</b>
+				tab. Once there, select the
+				<b>JS</b>
+				sub-tab. Then when clicking the buttons below (uncommunicated, props/emitter-driven and state-managed), you'll
+				see how the JavaScript of those dynamically loaded Parent components appears only when the buttos were clicked,
+				not before, thus asynchronously.
+			</p>
+
+			<p class="text-justify text-italics text-ternary">
+				Those JavaScript asynchronously chunks are called
+				<code class="unstyled-code text-primary">
+					Uncommunicated.js,
+				</code>
+				<code class="unstyled-code text-primary">
+					PopsEmitter_Driven.js
+				</code>
+				and
+				<code class="unstyled-code text-primary">
+					VueX_State_Managed.js
+				</code>
+				respectively.
+			</p>
 		</section>
 
 		<!-- dynamic components -->
 		<h2>Types of Component Intercommunication</h2>
-		<small class="text-italics">*dynamic parent components</small>
+		<small class="text-italics">* dynamic parent components, loaded asynchronously :)</small>
 
 		<ul class="btn-group mt-0 mb-2">
 			<li class="btn border-accent radius-sm" @click="dynamicLoad('EgParentNone')">
@@ -107,8 +137,8 @@
 	}
 
 	code {
-		color: mediumvioletred;
 		&:not(.unstyled-code) {
+			color: mediumvioletred;
 			font-size: 1.3rem;
 		}
 		&.unstyled-code {

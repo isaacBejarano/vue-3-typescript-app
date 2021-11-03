@@ -1,13 +1,20 @@
-import { defineComponent, ref } from "vue";
+import { defineAsyncComponent, defineComponent, ref } from "vue";
 
-import EgParentNone from "@/components/eg-parent/eg-parent-none/EgParentNone.vue";
-import EgParentEmit from "@/components/eg-parent/eg-parent-emit/EgParentEmit.vue";
-import EgParentVuex from "@/components/eg-parent/eg-parent-vuex/EgParentVuex.vue";
 import { e_DynamicComponents } from "@/global/enums";
 
 export default defineComponent({
 	name: "VueX",
-	components: { EgParentNone, EgParentEmit, EgParentVuex },
+	components: {
+		EgParentNone: defineAsyncComponent(() =>
+			import(/* webpackChunkName: "Uncommunicated" */ "@/components/eg-parent/eg-parent-none/EgParentNone.vue")
+		),
+		EgParentEmit: defineAsyncComponent(() =>
+			import(/* webpackChunkName: "PropsEmitter_Driven" */ "@/components/eg-parent/eg-parent-emit/EgParentEmit.vue")
+		),
+		EgParentVuex: defineAsyncComponent(() =>
+			import(/* webpackChunkName: "VueX_State_Managed" */ "@/components/eg-parent/eg-parent-vuex/EgParentVuex.vue")
+		),
+	},
 	setup() {
 		const title = {
 			fragment1: "uncommunicated",
