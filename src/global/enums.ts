@@ -11,8 +11,8 @@ enum e_NavLinks {
 	lifecycle = "/lifecycle-hooks",
 	dynamic = "/dynamic",
 	vuex = "/vuex",
-	tdd = "/tdd",
 	async = "/async",
+	tdd = "/tdd",
 }
 
 enum e_DynamicComponents {
