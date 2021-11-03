@@ -13,7 +13,7 @@ export default defineComponent({
 			["dynamic components & keep-alive", e_NavLinks.dynamic],
 			["async components & HTTP", e_NavLinks.async],
 			["vueX 4.0", e_NavLinks.vuex],
-			// ["TDD with JEST", "/tdd"],
+			["TDD / jest", "/tdd"],
 			// ["custom reactive store", e_NavLinks.vuex],
 			// ["Slots", "/slots"],
 			// ["Teleport", "/teleport"],
