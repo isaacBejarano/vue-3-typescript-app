@@ -1,25 +1,31 @@
 <template>
-	<div>
+	<div class="chuck">
 		<img src="@/assets/img/chuck-norris.jpg" alt="chuck norris picture" width="250" class="shadow" />
-		<p class="text-accent text-justify text-italics mt-1">"{{ joke }}"</p>
+		<p class="text-justify text-italics p-1 mt-1 shadow">"{{ chuck }}"</p>
 	</div>
 </template>
 
 <script lang="ts">
-	// import { watchEffect } from "vue";
-	// import { Vue } from "vue-class-component";
-	// import store from "@/store";
+	import { computed, defineComponent } from "vue";
 
-	// export default class Chuck extends Vue {
-	// 	joke = "";
+	import store from "@/store";
 
-	// 	beforeMount() {
-	// 		// VUEX @watch
-	// 		watchEffect(() => {
-	// 			if (store.getters.getChuck !== "") {
-	// 				this.joke = store.getters.getChuck;
-	// 			}
-	// 		});
-	// 	}
-	// }
+	export default defineComponent({
+		name: "Chuck",
+		setup() {
+			const chuck = computed(() => store.state.chuck);
+
+			return { chuck };
+		},
+	});
 </script>
+
+<style lang="scss" scoped>
+	.chuck {
+		p {
+			font-size: 1rem;
+			color: white;
+			background-color: mediumpurple;
+		}
+	}
+</style>
