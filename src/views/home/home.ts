@@ -11,23 +11,23 @@ export default defineComponent({
 		const p = "This App is a live example of Vue 3.0 with...";
 
 		const features = [
-			"VueX",
+			"Composition API",
 			"TypeScript",
-			"SASS/scss",
-			"Component Template/Style/Logic Decoupling",
-			"Class-Syntax Components",
-			"OOP (Object Oriented Programming)",
-			"Form Validation",
-			"Route Guards",
-			"Transitions",
+			"VueX 4.0",
 			"Lifecycle Hooks",
+			"Dynamic Components",
+			"Asynchronous Components",
+			"Route Guards",
+			"Form Validation",
+			"Session Storage",
+			"Transitions",
+			"Modals",
+			"HTTP Requests",
+			"Template-Style-Logic Decoupling",
+			"SASS",
+			"TDD (Test Driven Development) / Jest", // TODO:
 			// "Slots", // TODO:
 			// "Teleports", // TODO:
-			// "Dynamic Components",
-			"Asynchronous Components",
-			"HTTP Requests",
-			"Composition API",
-			// "TDD (Test Driven Development) with Jest", // TODO:
 		];
 
 		const howToRemoveSS2 = `If you want to try the 'Route Guards' page again,
