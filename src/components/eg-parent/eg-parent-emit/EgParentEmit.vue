@@ -2,11 +2,9 @@
 	<section class="eg-parent-emit">
 		<h3 class="text-capitalize">
 			{{ title }}
-
 			<small class="d-block  text-lowercase">
 				<code>
 					counter:
-
 					{{ count }}
 				</code>
 			</small>

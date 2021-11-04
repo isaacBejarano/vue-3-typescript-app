@@ -43,11 +43,16 @@ const routes: Array<RouteRecordRaw> = [
 		name: "Async",
 		component: () => import(/* webpackChunkName: "Async" */ "@/views/async/Async.vue"),
 	},
-	// {
-	// 	path: e_NavLinks.tdd,
-	// 	name: "TDD",
-	// 	component: () => import(/* webpackChunkName: "TDD" */ "@/views/tdd/TDD.vue"),
-	// },
+	{
+		path: e_NavLinks.jest,
+		name: "Jest",
+		component: () => import(/* webpackChunkName: "Jest" */ "@/views/jest/Jest.vue"),
+	},
+	{
+		path: e_NavLinks.tdd,
+		name: "TDD",
+		component: () => import(/* webpackChunkName: "TDD" */ "@/views/tdd/TDD.vue"),
+	},
 
 	// redirects
 	{
