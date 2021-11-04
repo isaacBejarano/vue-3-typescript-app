@@ -7,14 +7,27 @@
 			</h1>
 
 			<article class="py-1">
-				<h2 class>
+				<h2>setup() data and props</h2>
+				<h3>
 					Spec 1:
 					<code class="text-accent">
 						emit-driven.spec.ts
 					</code>
-				</h2>
+				</h3>
 
 				<textarea :value="p1" class="p-1 mt-1 border radius-sm" disabled></textarea>
+			</article>
+
+			<article class="py-1">
+				<h2>emitters</h2>
+				<h3>
+					Spec 2:
+					<code class="text-accent">
+						emit-driven.spec.ts
+					</code>
+				</h3>
+
+				<textarea :value="p2" class="p-1 mt-1 border radius-sm" disabled></textarea>
 			</article>
 		</section>
 	</main>
@@ -47,7 +60,7 @@
 			height: 900px;
 			resize: vertical;
 			overflow: hidden;
-			font-size: .8rem;
+			font-size: 0.8rem;
 
 			@media screen and (min-width: 568px) {
 				width: 500px;
