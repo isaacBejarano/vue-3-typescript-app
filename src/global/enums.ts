@@ -12,6 +12,7 @@ enum e_NavLinks {
 	dynamic = "/dynamic",
 	vuex = "/vuex",
 	async = "/async",
+	jest = "/jest",
 	tdd = "/tdd",
 }
 
